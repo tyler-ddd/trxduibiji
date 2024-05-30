@@ -1,11 +1,11 @@
 /*配置区域 */
 var mysql = require('mysql2'); // Copyrigth by @miya0v0 
 var pool = mysql.createPool({
-    host: 'localhost',
-    port: 3306, //mysql 端口
-    user: 'root', //mysql 用户名
-    password: '12345678', //mysql 密码
-    database: 'test01', //mysql 数据库
+    host: '',
+    port: , //mysql 端口
+    user: '', //mysql 用户名
+    password: '', //mysql 密码
+    database: '', //mysql 数据库
     multipleStatements: true //不要改这个
 });
 
@@ -24,7 +24,7 @@ const energyFnList=require('./energy.js');
 var token = config.token; //机器人 token
 var address =config.address;//收款地址
 var centeraddress = config.centeraddress;//转账地址
-var cunbiaddress = "TC7P8CbcoqoLRfUjvg1ihvNpkL7AwFMWDQ" //存币地址 (不识别这个地址的转账)
+var cunbiaddress = "" //存币地址 (不识别这个地址的转账)
 var energyaddress=config.energyaddress//能量收款地址
 var minCount_USDT =config.minCount_USDT;//usdt 起兑金额
 var minCount_TRX = config.minCount_TRX;//trx 起兑金额
@@ -42,9 +42,9 @@ newordertimestamp_trx = Math.round(new Date()); // Copyrigth by @miya0v0
 apiURL = [
     {
        
-        usdt: `https://api.trongrid.io/v1/accounts/${address}/transactions/trc20?limit=20&contract_address=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t`, //这里没有加入 APIKEY，如果需要加入 APIKEY，请自行修改
+        usdt: `https://api.trongrid.io/v1/accounts/${address}/transactions/trc20?limit=20&contract_address=xxxxxxxxxxx6t`, 
         trx: `https://api.trongrid.io/v1/accounts/${energyaddress}/transactions?limit=20`,// TRX 兑换 USDT 才需要配置
-        energUSDT:`https://api.trongrid.io/v1/accounts/${energyaddress}/transactions/trc20?limit=20&contract_address=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t`
+        energUSDT:`https://api.trongrid.io/v1/accounts/${energyaddress}/transactions/trc20?limit=20&contract_address=TRxxxxxxxxxxj6t`
     },
 ],
 keyboard = [
